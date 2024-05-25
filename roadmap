@@ -1,0 +1,32 @@
+/*
+
+/for common purpose
+----app.jsx
+----app.css
+
++components-----common-----EmptyView....>index.jsx
+                      
+                      -----FilterListToggle....>index.jsx
+
+
+           -----Home------FilterPanel
+                    ------List
+                    ------SearchBar
+
++constants.....>index.js
+
++pages-----Home....>index.jsx------<SearchBar/>--------index.jsx---------<SearchIcon/>
+                                                --------styles.css
+
+                              ------<FilterPanel/>--------index.jsx--------<FilterListToggle/>
+
+                              ------<List/>-------index.jsx
+
+               ....>style.css
+
+
+
+
+
+
+*/
