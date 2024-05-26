@@ -1,4 +1,4 @@
-.label{
+.label,.label-range{
     margin-bottom: 0.8rem;
     font-weight: 600;
 }
@@ -9,5 +9,4 @@
 
 .label-range{
     margin-bottom: 2.5rem;
-    
 }

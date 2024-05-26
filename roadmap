@@ -1,28 +1,36 @@
 /*
 
-/for common purpose
-----app.jsx
-----app.css
-
++---App.jsx
++---App.css
+|
 +components-----common-----EmptyView....>index.jsx
-                      
-                      -----FilterListToggle....>index.jsx
-
-
-           -----Home------FilterPanel
-                    ------List
-                    ------SearchBar
-
-+constants.....>index.js
-
-+pages-----Home....>index.jsx------<SearchBar/>--------index.jsx---------<SearchIcon/>
-                                                --------styles.css
-
-                              ------<FilterPanel/>--------index.jsx--------<FilterListToggle/>
-
-                              ------<List/>-------index.jsx
-
-               ....>style.css
+|         |          |
+|         |          |-----FilterListToggle....>index.jsx_________________________________________________|---<ToggleButtonGroup/> , </ToggleButton>(import from material-UI)
+|         |          |                                                                                    |
+|         |          |-----CheckboxProton....>index.jsx___________________________________________________|---<FormControlLabel/> , <Checkbox/>(import from material-UI)
+|         |          |                                                                                    |
+|         |          |-----SliderProton......>index.jsx___________________________________________________|
+|         |                                                                                               |
+|         |                                                                                               |
+|         |------Home-----List..........>index.jsx_____________________________________________________   |
+|                   |                                                                                  |  |
+|                   |                                                                                  |  |
+|                   |-----FilterPanel...>index.jsx_____________________________________________________|__|
+|                   |                |...>styles.css________________________________________________|  |
+|                   |                                                                               |  |
+|                   |------SearchBar.....>index.jsx______|---<SearchIcon/>(import from material-UI) |  |
+|                                  |.....>styles.css_____|                                          |  |
+|                                                        |                                          |  |
++constants....>index.jsx                                 |                                          |  |
+|                                                        |                                          |  |
++pages-----Home....>index.jsx------<SearchBar/>----------|                                          |  |
+|             |              |                                                                      |  |
+|             |              |                                                                      |  |
+|             |              |------<FilterPanel/>--------------------------------------------------|  |
+|             |              |                                                                         |
+|             |              |------<List/>-------index.jsx--------------------------------------------|
+|             |
+|             |....>style.css
 
 
 
