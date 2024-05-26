@@ -31,12 +31,12 @@ const FilterPanel=({
         {/*Cusines*/}
         <div className="input-group">
           <p className='label'> Cuisine</p>
-          {cuisines.map(cuisine=>
+          {cuisines.map(cuisine=>(
           <CheckboxProton
           key={cuisine.id}
           cuisine={cuisine}
           changeChecked={changeChecked}
-          />)}
+          />))}
         </div>
 
         {/*Price Range */}

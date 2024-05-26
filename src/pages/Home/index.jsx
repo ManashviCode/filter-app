@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect,useState } from 'react'
 import SearchBar from '../../components/Home/SearchBar';
 import FilterPanel from '../../components/Home/FilterPanel';
 import List from '../../components/Home/List';
@@ -19,6 +19,7 @@ const Home =() => {
 
     const [resultsFound, setResultsFound] = useState(true);
     const [list, setList] = useState(dataList);
+    const [searchInput, setSearchInput] = useState('');
 
     const handleSelectCategory=(event,value)=>
         !value ? null :setSelectedCategory(value);
@@ -38,10 +39,67 @@ const Home =() => {
         setSelectedPrice(value);
       };
 
+    const applyFilters = () => {
+        let updatedList = dataList;
+    
+        // Rating Filter
+        if (selectedRating) {
+          updatedList = updatedList.filter(
+            (item) => parseInt(item.rating) === parseInt(selectedRating)
+          );
+        }
+
+         // Category Filter
+        if (selectedCategory) {
+        updatedList = updatedList.filter(
+          (item) => item.category === selectedCategory
+        );
+        }
+
+        // Cuisine Filter
+        const cuisinesChecked = cuisines
+        .filter((item) => item.checked)
+        .map((item) => item.label.toLowerCase());
+
+        if (cuisinesChecked.length) {
+        updatedList = updatedList.filter((item) =>
+          cuisinesChecked.includes(item.cuisine)
+        );
+        }
+
+       // Search Filter
+        if (searchInput) {
+        updatedList = updatedList.filter(
+          (item) =>
+            item.title.toLowerCase().search(searchInput.toLowerCase().trim()) !==
+            -1
+        );
+      }
+
+      // Price Filter
+    const minPrice = selectedPrice[0];
+    const maxPrice = selectedPrice[1];
+
+    updatedList = updatedList.filter(
+      (item) => item.price >= minPrice && item.price <= maxPrice
+    );
+
+        setList(updatedList);
+
+        !updatedList.length ? setResultsFound(false) : setResultsFound(true);
+      };
+
+        useEffect(() => {
+            applyFilters();
+          }, [selectedRating, selectedCategory, cuisines, searchInput, selectedPrice]);
+
     return (
     <div className='home'>
     {/* Search Bar */}
-    <SearchBar/>
+    <SearchBar
+        value={searchInput}
+        changeInput={(e) => setSearchInput(e.target.value)}
+    />
 
         <div className='home_panelList-wrap'>
             <div className='home_panel-wrap'>

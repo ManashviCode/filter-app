@@ -1,11 +1,11 @@
 import React from 'react'
+import './styles.css';
 
-const EmptyView=()=> {
-  return (
-    <div>
-      
+const EmptyView=()=>  (
+    <div className='emptyView-wrap'>
+        <img src='/images/gif/empty.gif' alt='' />
     </div>
-  )
-}
+  );
+
 
 export default EmptyView

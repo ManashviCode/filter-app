@@ -14,12 +14,12 @@
 }
 
 .home_panel-wrap{
- flex-basis: 280px;
- padding: 1rem;
+    flex-basis: 280px;
+    padding: 1rem;
 }
 
 .home_list-wrap{
-   
+    padding: 1rem;
     flex:1;
 }
 

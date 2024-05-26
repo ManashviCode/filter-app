@@ -5,10 +5,11 @@ import './styles.css';
 const SearchBar=( { value, changeInput})=> (
     <div className="searchBar-wrap">
         <SearchIcon className='SearchBar-icon'/>
-        <input type='text'
-            placeholder='Woodland Hills'
-            value={value}
-            onChange={changeInput} />
+        <input 
+          type='text'
+          placeholder='Woodland Hills'
+          value={value}
+          onChange={changeInput} />
     </div>
 );
 
